@@ -8,7 +8,8 @@ locals {
 }
 
 module "location_code" {
-  source = "../location_code"
+  source  = "de4dwood/location_codes/azure"
+  version = "1.0.0"
   location = var.location
 }
 
