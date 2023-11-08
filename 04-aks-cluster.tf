@@ -33,7 +33,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   resource_group_name = azurerm_resource_group.main_rg.name
   dns_prefix          = "aks-${local.X}"
   kubernetes_version  = data.azurerm_kubernetes_service_versions.current.latest_version
-  node_resource_group = "${azurerm_resource_group.main_rg.name}-aks-nrg${var.postfix}"
+  node_resource_group = "${azurerm_resource_group.main_rg.name}-aks-nrg"
 
   default_node_pool {
     name                 = var.product_name
