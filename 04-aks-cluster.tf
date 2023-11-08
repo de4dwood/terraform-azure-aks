@@ -23,7 +23,7 @@ locals {
 }
 resource "tls_private_key" "aks_ssh" {
   count     = var.ssh_public_key == null ? 1 : 0
-  algorithm = "rsa"
+  algorithm = "RSA"
 }
 
 
