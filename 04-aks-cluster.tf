@@ -8,7 +8,7 @@ locals {
   aks_network_profile = {
     network_plugin    = lookup(var.aks_network_profile, "network_plugin", "azure")
     network_policy    = lookup(var.aks_network_profile, "network_policy", "calico")
-    load_balancer_sku = lookup(var.aks_network_profile, "load_balancer_sku", "Standard")
+    load_balancer_sku = lookup(var.aks_network_profile, "load_balancer_sku", "standard")
     service_cidr      = lookup(var.aks_network_profile, "service_cidr", "10.85.0.0/16")
     dns_service_ip    = lookup(var.aks_network_profile, "dns_service_ip", "10.85.0.10")
   }
