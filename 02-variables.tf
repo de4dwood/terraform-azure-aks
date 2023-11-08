@@ -1,34 +1,29 @@
 variable "location" {
-  type = string
+  type        = string
   description = "Azure Region where all these resources will be provisioned"
-  default = "francecentral"
+  default     = "francecentral"
 }
 
-variable "location_abbreviation" {
-  type = string
-  description = "Azure Region abbreviation name where all these resources will be provisioned"
-  default = "frc"
-}
 variable "product_name" {
-  type = string
+  type        = string
   description = "This variable defines the product name that we deploy here"
-  default = "example"
+  default     = "example"
 }
 
 variable "environment" {
-  type = string  
-  description = "This variable defines the Environment"  
-  default = "test"
+  type        = string
+  description = "This variable defines the Environment"
+  default     = "test"
 }
 
 # SSH Public Key for Linux VMs
 variable "ssh_public_key" {
-  default = null
-  description = "This variable defines the SSH Public Key for Linux"  
+  default     = null
+  description = "This variable defines the SSH Public Key for Linux"
 }
 
 variable "postfix" {
-  default = "01"
+  default = "-01"
 }
 
 variable "aks_version_prefix" {
@@ -36,22 +31,22 @@ variable "aks_version_prefix" {
 }
 
 variable "acr" {
-  type = any
+  type    = any
   default = {}
 }
 
 variable "aks_default_node_pool" {
-  type = any
+  type    = any
   default = {}
-  }
+}
 
 
 variable "aks_network_profile" {
-  type = any
+  type    = any
   default = {}
 }
 
 variable "vnet" {
-  type = any
+  type    = any
   default = {}
 }

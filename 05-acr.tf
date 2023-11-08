@@ -3,8 +3,8 @@ locals {
 }
 
 data "azurerm_container_registry" "acr" {
-  count = local.acr_exists
-  name = var.acr.name
+  count               = local.acr_exists
+  name                = var.acr.name
   resource_group_name = var.acr.resource_group_name
 }
 

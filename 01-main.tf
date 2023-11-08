@@ -17,13 +17,13 @@ terraform {
       source  = "hashicorp/random"
       version = "~> 3.0"
     }
+    tls = {
+      source = "hashicorp/tls"
+    }
   }
 }
 provider "azurerm" {
   features {
   }
-}
-
-provider "tls" {
 }
 
