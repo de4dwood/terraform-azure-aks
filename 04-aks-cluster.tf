@@ -16,9 +16,9 @@ locals {
     vm_size             = lookup(var.aks_default_node_pool, "vm_size", "Standard_D2ds_v4")
     zones               = lookup(var.aks_default_node_pool, "zones", [])
     enable_auto_scaling = lookup(var.aks_default_node_pool, "enable_auto_scaling", false)
-    max_count           = local.aks_default_node_pool.enable_auto_scaling == false ? null : lookup(var.aks_default_node_pool, "max_count", 1)
-    min_count           = local.aks_default_node_pool.enable_auto_scaling == false ? null : lookup(var.aks_default_node_pool, "min_count", 1)
-    node_count          = local.aks_default_node_pool.enable_auto_scaling == true ?  null : lookup(var.aks_default_node_pool, "node_count", 1)
+    max_count           = lookup(var.aks_default_node_pool, "enable_auto_scaling", false) != true ? null : lookup(var.aks_default_node_pool, "max_count", 1)
+    min_count           = lookup(var.aks_default_node_pool, "enable_auto_scaling", false) != true ? null : lookup(var.aks_default_node_pool, "min_count", 1)
+    node_count          = lookup(var.aks_default_node_pool, "enable_auto_scaling", false) == true ?  null : lookup(var.aks_default_node_pool, "node_count", 1)
     os_disk_size_gb     = lookup(var.aks_default_node_pool, "os_disk_size_gb", 50)
   }
 }
