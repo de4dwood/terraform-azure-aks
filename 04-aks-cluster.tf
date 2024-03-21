@@ -38,6 +38,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
 
   default_node_pool {
     name                 = var.product_name
+    temporary_name_for_rotation = "tmpnode"
     vm_size              = local.aks_default_node_pool.vm_size
     orchestrator_version = data.azurerm_kubernetes_service_versions.current.latest_version
     zones                = local.aks_default_node_pool.zones
